@@ -36,4 +36,21 @@ class ApplicationController < ActionController::Base
        return false
      end
   end
+  
+  def respond_not_found(msg = 'Not Found')
+      respond_with_error(msg, 404)
+    end
+
+    def respond_access_denied(msg = 'Access denied')
+      respond_with_error(msg, 403)
+    end
+
+    def respond_with_error(msg, code = 500, extra_json_keys = {})
+      respond_to do |format|
+        format.html { render :text => '<p class="error">' + ERB::Util.html_escape(msg) + '</p>', :layout => true, :status => code }
+        format.json { render :json => { :error => msg }.merge(extra_json_keys), :status => code }
+        format.text { render :text => 'ERROR: ' + msg, :status => code }
+        format.zip { render :text => msg, :status => code, :content_type => 'text/plain' }
+      end
+    end
 end

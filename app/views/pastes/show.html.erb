@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div id="filename">
+  <b>Filename:</b>
+  <%= @paste.filename %>
+</div>
+<div id="code">
+	<%= raw @html %>
+</div>
+
+<div id="nick">
+  <b>Nick:</b>
+  <%= @paste.nick %>
+</div>
+
+
+
+
+<%= link_to 'Edit', edit_paste_path(@paste) %> |
+<%= link_to 'Back', pastes_path %>

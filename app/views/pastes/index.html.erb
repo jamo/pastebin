@@ -1,0 +1,27 @@
+<h1>Listing pastes</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Filename</th>
+    <th>Nick</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pastes.each do |paste| %>
+  <tr>
+    <td><%= paste.body %></td>
+    <td><%= paste.filename %></td>
+    <td><%= paste.nick %></td>
+    <td><%= link_to 'Show', paste %></td>
+    <td><%= link_to 'Edit', edit_paste_path(paste) %></td>
+    <td><%= link_to 'Destroy', paste, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Paste', new_paste_path %>

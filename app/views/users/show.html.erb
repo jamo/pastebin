@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<div id="userData">
+		<ul>
+			<li>Username: <%= @user.username%></li>
+			<li>First name: <%= @user.first_name%></li>
+			<li>Last name: <%= @user.last_name%></li>
+			<li>Email: <%= @user.email%></li>
+		</ul>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

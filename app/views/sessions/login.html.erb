@@ -1,0 +1,21 @@
+<% @page_title = "UserAuth | Login" -%>
+<div class="login">
+<% if flash[:error] %>
+<p class="flash-error"><%= flash[:error] %></p>
+<% end %>
+<% if flash[:notice] %>
+<p class="flash-notice "><%= flash[:notice] %></p>
+<% end %>
+<div class= "Sign_Form">
+<h1>Log in</h1>
+<%= form_tag(:action => 'login') do %>
+  <p>Username or Email:</br> <%= text_field_tag(:username_or_email) %></p>
+  <p>Password:</br> <%= password_field_tag :login_password %></p>
+  <%= submit_tag("Log In") %>
+<% end %>
+</div>
+
+<p>Don't have an account
+	<%= link_to :"Sing up", signup_path%>
+	</p>
+</div>

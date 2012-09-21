@@ -1,5 +1,5 @@
 class Paste < ActiveRecord::Base
-  attr_accessible :body, :filename, :nick
+  attr_accessible :body, :filename, :nick, :title
   validates :body, :presence => true
-  validates :title, :length => { :in => 3..20 }
+  validates :title, :length => { :minimum => 3 }
 end

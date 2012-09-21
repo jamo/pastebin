@@ -3,13 +3,13 @@ class PastesController < ApplicationController
   # GET /pastes
   # GET /pastes.json
   def index
-      @pastes = Paste.all
+    @pastes = Paste.all
 
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render json: @pastes }
-      end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pastes }
     end
+
   end
 
   # GET /pastes/1

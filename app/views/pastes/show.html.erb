@@ -1,17 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<div id="filename">
-  <b>Filename:</b>
-  <%= @paste.filename %>
-</div>
-<div id="code">
-	<%= raw @html %>
+<div id="paste-wrapper">
+	<div id="details">
+		<div id="filename">
+			<b>Filename:</b>
+			<%= @paste.filename %>
+		</div>
+		<div id="nick">
+			<b>Nick:</b>
+			<%= @paste.nick %>
+		</div>
+	</div>
+	<div id="code">
+		<%= raw @html %>
+	</div>
 </div>
 
-<div id="nick">
-  <b>Nick:</b>
-  <%= @paste.nick %>
-</div>
 
 
 

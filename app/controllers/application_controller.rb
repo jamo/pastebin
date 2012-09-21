@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_filter  :authenticate_user
   before_filter :current_user
+  before_filter :can_do?
   protect_from_forgery
   #protected
   def authenticate_user
@@ -18,6 +19,10 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     authenticate_user
+  end
+  
+  def can_do?
+    respond_access_denied unless current_user.admin?
   end
  
 

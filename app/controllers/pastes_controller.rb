@@ -3,7 +3,6 @@ class PastesController < ApplicationController
   # GET /pastes
   # GET /pastes.json
   def index
-    unless current_user.admin?
       @pastes = Paste.all
 
       respond_to do |format|
@@ -38,7 +37,6 @@ class PastesController < ApplicationController
 
   # GET /pastes/1/edit
   def edit
-    respond_access_denied unless current_user.admin?
     @paste = Paste.find(params[:id])
   end
 
@@ -61,7 +59,6 @@ class PastesController < ApplicationController
   # PUT /pastes/1
   # PUT /pastes/1.json
   def update
-    respond_access_denied unless current_user.admin?
     @paste = Paste.find(params[:id])
 
     respond_to do |format|
@@ -78,7 +75,6 @@ class PastesController < ApplicationController
   # DELETE /pastes/1
   # DELETE /pastes/1.json
   def destroy
-    respond_access_denied unless current_user.admin?
     @paste = Paste.find(params[:id])
     @paste.destroy
 

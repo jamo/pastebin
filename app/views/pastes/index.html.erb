@@ -12,9 +12,7 @@
 
 <% @pastes.each do |paste| %>
   <tr>
-    <td><%= paste.body %></td>
-    <td><%= paste.filename %></td>
-    <td><%= paste.nick %></td>
+    <td><%= paste.title %></td>
     <td><%= link_to 'Show', paste %></td>
     <td><%= link_to 'Edit', edit_paste_path(paste) %></td>
     <td><%= link_to 'Destroy', paste, method: :delete, data: { confirm: 'Are you sure?' } %></td>

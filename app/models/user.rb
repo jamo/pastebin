@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   validate  :password_must_be_present
   
+  
   def User.authenticate(name, password)
    # debugger
     user = User.find_by_username(name)

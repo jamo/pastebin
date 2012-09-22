@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% if notice%>
+	<p id="notice"><%= notice %></p>
+<%end%>
 <div id="paste-wrapper">
 	<div id="details">
 		<div id="filename">
@@ -14,11 +15,17 @@
 	<div id="code">
 		<%= raw @html %>
 	</div>
+	<div class="links">
+		<%= link_to 'Create New Paste', new_paste_path %>
+		<% if @current_user.admin?%>
+			<%= link_to 'Edit', edit_paste_path(@paste) %> |
+			<%= link_to 'Back', pastes_path %> 
+		<%end%>
+	</div>
 </div>
 
 
 
 
 
-<%= link_to 'Edit', edit_paste_path(@paste) %> |
-<%= link_to 'Back', pastes_path %>
+

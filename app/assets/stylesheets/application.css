@@ -56,7 +56,7 @@
 
 
 .top {
-    height: 47px !important;
+    height: 57px !important;
     margin: 0 0 30px;
     padding: 0;
     line-height: 45px;
@@ -70,7 +70,7 @@
 .top-bar .attached {
     margin: 0 auto;
     position: relative;
-    height: 45px;
+    height: 55px;
     border: 0 solid #000;
     border-width: 0 0 1px;
     color: #fff;
@@ -82,4 +82,7 @@
     background: #111;
 	font-weight: bold;
 	font-size: 30px;
+}
+.top-bar .attached h1, h2 {
+	text-align: center;
 }

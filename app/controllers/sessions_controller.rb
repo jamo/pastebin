@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_filter :authenticate_user, :only => [:home, :profile, :setting]
+  skip_before_filter :can_access? 
 
   def login
     #Login Form

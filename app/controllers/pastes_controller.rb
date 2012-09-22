@@ -1,5 +1,6 @@
 class PastesController < ApplicationController
   skip_before_filter :authenticate_user, :only => [ :new, :create, :show]
+  skip_before_filter :can_access? , :only => [:new, :create, :show]
   # GET /pastes
   # GET /pastes.json
   def index

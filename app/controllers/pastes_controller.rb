@@ -3,6 +3,24 @@ class PastesController < ApplicationController
   skip_before_filter :can_access? , :only => [:new, :create, :show]
   # GET /pastes
   # GET /pastes.json
+ 
+=begin
+  alail = :'c++'       => :cpp,
+      :cplusplus   => :cpp,
+      :ecmascript  => :java_script,
+      :ecma_script => :java_script,
+      :rhtml       => :erb,
+      :eruby       => :erb,
+      :irb         => :ruby,
+      :javascript  => :java_script,
+      :js          => :java_script,
+      :pascal      => :delphi,
+      :patch       => :diff,
+      :plain       => :text,
+      :plaintext   => :text,
+      :xhtml       => :html,
+      :yml         =>:text
+=end  
   def index
     @pastes = Paste.all
 
@@ -29,6 +47,8 @@ class PastesController < ApplicationController
   # GET /pastes/new.json
   def new
     @paste = Paste.new
+    
+    
 
     respond_to do |format|
       format.html # new.html.erb

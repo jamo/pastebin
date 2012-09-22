@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120921201611) do
+ActiveRecord::Schema.define(:version => 20120922193549) do
 
   create_table "pastes", :force => true do |t|
     t.text     "body"
     t.string   "filename"
     t.string   "nick"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "title"
+    t.string   "encoding",   :default => "java"
   end
 
   create_table "sessions", :force => true do |t|

@@ -18,23 +18,34 @@
 }
 
 #paste-wrapper #details {
-	width: 50%;
+	width: 100%;
 
 }
 
-#paste-wrapper #details #nick {
-	float: right;
-	width: 100px;
-}
-
-#paste-wrapper #details #file {
+#paste-wrapper #details #filename {
 	float: left;
-	width: 100px;
 }
+#paste-wrapper #details #nick {
+	margin-left: 30px;
+	float: left;
+}
+
+
 #paste-wrapper #code {
-	background: #eee;
-	width: 90%;
+	padding-top: 30px;
+	/*background: #ccc;*/
+	width: 100%;
 	float: center;
+}
+#paste-wrapper .CodeRay {
+		border: solid 2px gray
+}
+.line-numbers {
+	background: #eee;
+}
+.code {
+	background: #eee;
+	width: 100%;
 }
 
 

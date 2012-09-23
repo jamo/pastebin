@@ -8,11 +8,13 @@ Uuden luontia varten
 */
 #new-wrapper {
 	width: auto;
+	margin-top: 10px;
 	margin-left: auto ;
 	margin-right: auto ;
 	padding: 10px;
 	background: lightgray;
-	text-align: center
+	text-align: center;
+
 }
 
 #new-wrapper #properties {

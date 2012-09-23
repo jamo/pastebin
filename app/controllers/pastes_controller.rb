@@ -38,7 +38,7 @@ class PastesController < ApplicationController
    # @paste = Paste.find(params[:id])
     @paste = Paste.find_by_key(params[:id])# unless @paste
     
-    hilight = @paste.encoding || 'java' 
+    hilight = Paste::LANG[@paste.encoding] || 'java' 
     @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :table)
 
     respond_to do |format|

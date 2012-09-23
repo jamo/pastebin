@@ -13,21 +13,20 @@
 
   
   <div class="field" id="properties">
-    <%= f.label :title %>:
-    <%= f.text_field :title, :size => 10 %>
-
     <%= f.label :filename %>:
-    <%= f.text_field :filename, :size => 10 %>
+    <%= f.text_field :filename, :size => 15 %>
 
     <%= f.label :nick %>:
-    <%= f.text_field :nick, :size => 10 %>
+    <%= f.text_field :nick, :size => 15 %>
 	Syntax highlight:
-	<%=  f.select(:encoding, Paste::LANG.keys, )%>
+	<%=  f.select(:encoding, Paste::LANG.keys )%> <br>
+	Title/Description:
+    <%= f.text_field :title, :size => 85 %>
 	</div>
-<div class="field">
+<div class="field center">
     <%= f.text_area :body,:id => "message_area", :cols => 80, :rows => 25 %>
   </div>
-  <div class="actions">
+  <div class="actions center">
     <%= f.submit 'Save' %>
   </div>
 <% end %>

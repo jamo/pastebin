@@ -73,7 +73,7 @@ class PastesController < ApplicationController
 
     respond_to do |format|
       if @paste.save
-        format.html { redirect_to paste_path(@paste.key), notice: 'Paste was successfully created.' }
+        format.html { redirect_to paste_path(@paste.key), notice: 'Now you can copy url' }
       else
         format.html { render action: "new" }
       end

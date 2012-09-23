@@ -16,23 +16,35 @@ Uuden luontia varten
 	padding: 10px;
 	background: lightgray;
 	text-align: center;
+	
 
 }
+#new-wrapper .new_paste {
+	
+	margin-left: auto ;
 
-#new-wrapper #properties {
+	margin-right: auto ;
+	width: 600px;
+	text-align: center;
+}
+
+#new-wrapper .new_paste #properties {
 	width: 100%;
-	text-align: center
+	margin-left: 10px;
+	text-align: left
 }
-#new-wrapper .fieds {
+#new-wrapper .new_paste .fieds {
 	margin-left: auto ;
 	margin-right: auto ;
+	text-align: left;
 }
 
 
-#new-wrapper #code {
+#new-wrapper .new_paste #code {
 	padding-top: 30px;
 	/*background: #ccc;*/
 	width: 100%;
+	text-align: center;
 }
 
 

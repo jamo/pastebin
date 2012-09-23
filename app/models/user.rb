@@ -2,7 +2,7 @@ require 'digest/sha2'
 class User < ActiveRecord::Base
   # attr_accessible :title, :body
   EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
-  attr_accessible :first_name, :last_name, :username, :email, :email_confirmation, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :username, :email, :email_confirmation, :password, :password_confirmation, :admin
   validates :first_name, :length => { :minimum => 2 }
   validates :last_name, :length => { :minimum => 2 }
   validates :username, :uniqueness => true, :length => { :minimum => 2 }

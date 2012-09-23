@@ -5,7 +5,7 @@ class PastesController < ApplicationController
   # GET /pastes.json
  
 =begin
-  alail = :'c++'       => :cpp,
+  avail = :'c++'       => :cpp,
       :cplusplus   => :cpp,
       :ecmascript  => :java_script,
       :ecma_script => :java_script,
@@ -34,8 +34,12 @@ class PastesController < ApplicationController
   # GET /pastes/1
   # GET /pastes/1.json
   def show
-    @paste = Paste.find(params[:id])
-    @html = CodeRay.scan(@paste.body, :java).div(:line_numbers => :table)
+    
+   # @paste = Paste.find(params[:id])
+    @paste = Paste.find_by_key(params[:id])# unless @paste
+    
+    hilight = @paste.encoding || 'java' 
+    @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :table)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -65,14 +69,13 @@ class PastesController < ApplicationController
   # POST /pastes.json
   def create
     @paste = Paste.new(params[:paste])
+    
 
     respond_to do |format|
       if @paste.save
-        format.html { redirect_to @paste, notice: 'Paste was successfully created.' }
-        format.json { render json: @paste, status: :created, location: @paste }
+        format.html { redirect_to paste_path(@paste.key), notice: 'Paste was successfully created.' }
       else
         format.html { render action: "new" }
-        format.json { render json: @paste.errors, status: :unprocessable_entity }
       end
     end
   end

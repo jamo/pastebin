@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120922193549) do
+ActiveRecord::Schema.define(:version => 20120923131856) do
 
   create_table "pastes", :force => true do |t|
     t.text     "body"
@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(:version => 20120922193549) do
     t.datetime "updated_at",                     :null => false
     t.string   "title"
     t.string   "encoding",   :default => "java"
+    t.string   "key"
   end
+
+  add_index "pastes", ["key"], :name => "index_pastes_on_key"
 
   create_table "sessions", :force => true do |t|
     t.string   "home"

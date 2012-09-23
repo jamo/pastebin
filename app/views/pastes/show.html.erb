@@ -22,7 +22,7 @@
 	<div class="links">
 		<%= link_to 'Create New Paste', new_paste_path %>
 		<% if @current_user.admin?%>
-			| <%= link_to 'Edit', edit_paste_path(@paste) %> |
+			| <%= link_to 'Edit', edit_paste_path(@paste.key) %> |
 			<%= link_to 'Back', pastes_path %> 
 		<%end%>
 	</div>

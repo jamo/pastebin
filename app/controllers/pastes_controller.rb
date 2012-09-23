@@ -62,7 +62,7 @@ class PastesController < ApplicationController
 
   # GET /pastes/1/edit
   def edit
-    @paste = Paste.find(params[:id])
+    @paste = Paste.find_by_key(params[:id])
   end
 
   # POST /pastes
@@ -100,7 +100,7 @@ class PastesController < ApplicationController
   # DELETE /pastes/1
   # DELETE /pastes/1.json
   def destroy
-    @paste = Paste.find(params[:id])
+    @paste = Paste.find_by_key(params[:id])
     @paste.destroy
 
     respond_to do |format|

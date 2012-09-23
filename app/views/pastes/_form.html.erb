@@ -12,24 +12,20 @@
   <% end %>
 
   
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-<div class="field">
-    <%= f.label :filename %><br />
-    <%= f.text_field :filename %>
-  </div>
-  <div class="field ">
-    <%= f.label :nick %><br />
-    <%= f.text_field :nick %>
-  </div>
-	Syntax hilight</br>
-<%=  f.select(:encoding, Paste::LANG, )%>
+  <div class="field" id="properties">
+    <%= f.label :title %>:
+    <%= f.text_field :title, :size => 10 %>
 
+    <%= f.label :filename %>:
+    <%= f.text_field :filename, :size => 10 %>
+
+    <%= f.label :nick %>:
+    <%= f.text_field :nick, :size => 10 %>
+	Syntax hilight
+	<%=  f.select(:encoding, Paste::LANG, )%>
+	</div>
 <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body,:id => "message_area", :cols => 80, :rows => 50 %>
+    <%= f.text_area :body,:id => "message_area", :cols => 80, :rows => 20 %>
   </div>
   <div class="actions">
     <%= f.submit 'Save' %>

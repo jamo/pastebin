@@ -3,3 +3,32 @@
   They will automatically be included in application.css.
 */
 
+/*
+Uuden luontia varten
+*/
+#new-wrapper {
+	width: auto;
+	margin-left: auto ;
+	margin-right: auto ;
+	padding: 10px;
+	background: lightgray;
+	text-align: center
+}
+
+#new-wrapper #properties {
+	width: 100%;
+	text-align: center
+}
+#new-wrapper .fieds {
+	margin-left: auto ;
+	margin-right: auto ;
+}
+
+
+#new-wrapper #code {
+	padding-top: 30px;
+	/*background: #ccc;*/
+	width: 100%;
+}
+
+

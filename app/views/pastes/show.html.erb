@@ -3,13 +3,13 @@
 <%end%>
 <div id="paste-wrapper">
 	<div id="details">
-		<% unless @paste.title %>
-		<div id="filename">
+		<% unless @paste.title.blank? %>
+		<div id="title">
 			<b>Title:</b>
 			<%= @paste.title %>
 		</div>
 		<% end %>
-		<% unless @paste.nick %>
+		<% unless @paste.nick.blank? %>
 		<div id="nick">
 			<b>Nick:</b>
 			<%= @paste.nick %>

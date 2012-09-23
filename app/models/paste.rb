@@ -2,8 +2,7 @@ class Paste < ActiveRecord::Base
   attr_accessible :body, :filename, :nick, :title, :encoding
   validates :body, :presence => true
   validates :key, :uniqueness => true
-  LANG = {:Java => 'java',:Nome => 'text',:Ruby => 'ruby', :HTML => 'html', :'C++' => 'cpp',
-    :js => 'java_script', 'erb' => 'erb','rhtml' => 'erb'}
+  LANG = {:Java => 'java', 'C++' => 'cpp', 'JavaScript' => 'java_script', 'Plain Text' => 'text', :HTML => 'html',:Ruby => 'ruby'}
 =begin
   avail = :'c++'       => :cpp,
       :cplusplus   => :cpp,

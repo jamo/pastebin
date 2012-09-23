@@ -2,7 +2,7 @@ class Paste < ActiveRecord::Base
   attr_accessible :body, :filename, :nick, :title, :encoding
   validates :body, :presence => true
   validates :key, :uniqueness => true
-  LANG = ['java','text','java_script','ruby','html']
+  LANG = ['java','text','ruby','html']
   
   before_create :generate_key
   

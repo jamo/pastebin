@@ -3,14 +3,18 @@
 <%end%>
 <div id="paste-wrapper">
 	<div id="details">
+		<% unless @paste.title %>
 		<div id="filename">
-			<b>Filename:</b>
-			<%= @paste.filename %>
+			<b>Title:</b>
+			<%= @paste.title %>
 		</div>
+		<% end %>
+		<% unless @paste.nick %>
 		<div id="nick">
 			<b>Nick:</b>
 			<%= @paste.nick %>
 		</div>
+		<% end %>
 	</div>
 	<div id="code">
 		<%= raw @html %>

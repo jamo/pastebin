@@ -4,9 +4,9 @@
 <div id="paste-wrapper">
 	<div id="details">
 		<% unless @paste.title.blank? %>
-		<div id="title">
-			<b>Title:</b>
-			<%= @paste.title %>
+		<div id="filename">
+			<b>Filename:</b>
+			<%= @paste.filename %>
 		</div>
 		<% end %>
 		<% unless @paste.nick.blank? %>

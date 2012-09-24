@@ -88,7 +88,7 @@ class PastesController < ApplicationController
 
     respond_to do |format|
       if @paste.update_attributes(params[:paste])
-        format.html { redirect_to @paste, notice: 'Paste was successfully updated.' }
+        format.html { redirect_to  paste_path(@paste.key), notice: 'Paste was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

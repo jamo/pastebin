@@ -16,6 +16,14 @@
 		
 		</div>
 		<% end %>
+		<% unless @paste.title.blank? %>
+		
+		<div id="size">
+		
+			<b>Size:</b>
+			<%= @paste.size %>
+		</div>
+		<% end %>
 			
 		<% unless @paste.title.blank? %>
 		<br>

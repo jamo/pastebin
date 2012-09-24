@@ -13,22 +13,19 @@
 		<div id="nick">
 			<b>Nick:</b>
 			<%= @paste.nick %>
-		
+
 		</div>
 		<% end %>
 		<% unless @paste.title.blank? %>
-		
 		<div id="size">
-		
 			<b>Size:</b>
 			<%= @paste.size %>
 		</div>
 		<% end %>
-			
+
 		<% unless @paste.title.blank? %>
 		<br>
 		<div id="title">
-		
 			<b>Title/Description:</b>
 			<%= @paste.title %>
 		</div>

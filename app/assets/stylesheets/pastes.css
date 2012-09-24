@@ -39,6 +39,14 @@ background: #A0E6FF;
 	/*background: #ccc;*/
 	width: 100%;
 	float: center;
+	
+}
+#paste-wrapper #code .CodeRay .code{
+	word-wrap: break-word;
+	width:100%;
+/*	width: 70em;
+	display:inline-block;*/
+	
 }
 #paste-wrapper .CodeRay {
 		border: solid 2px gray

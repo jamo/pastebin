@@ -39,6 +39,8 @@ background: #A0E6FF;
 	/*background: #ccc;*/
 	width: 100%;
 	float: center;
+	overflow: scroll;
+	overflow-y: scroll;
 	
 }
 #paste-wrapper #code .CodeRay .code{

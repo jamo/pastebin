@@ -39,16 +39,16 @@ class PastesController < ApplicationController
     @paste = Paste.find_by_key(params[:id])# unless @paste
     
     hilight = Paste::LANG[@paste.encoding] || 'java' 
-    rivinumerointi = true
+    #rivinumerointi = true
     
-    @paste.body.each_line do |l|
-      rivinumerointi = false if l.length > 80
-    end
-    if rivinumerointi
+    #@paste.body.each_line do |l|
+    #  rivinumerointi = false if l.length > 80
+    #end
+    #if rivinumerointi
       @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :table)
-    else
-      @html = CodeRay.scan(@paste.body, hilight.to_sym).div
-    end
+    #else
+    #  @html = CodeRay.scan(@paste.body, hilight.to_sym).div
+    #end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @paste }

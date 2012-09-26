@@ -3,7 +3,7 @@
 <%end%>
 <div id="paste-wrapper">
 	<div id="details">
-		<% unless @paste.title.blank? %>
+		<% unless @paste.filename.blank? %>
 		<div id="filename">
 			<b>Filename:</b>
 			<%= @paste.filename %>
@@ -20,6 +20,12 @@
 		<div id="size">
 			<b>Size:</b>
 			<%= @paste.size %>
+		</div>
+		<% end %>
+		<% unless @paste.encoding.blank? %>
+		<div id="size">
+			<b>Syntax highlight:</b>
+			<%= @paste.encoding %>
 		</div>
 		<% end %>
 

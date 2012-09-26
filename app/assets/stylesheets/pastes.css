@@ -36,19 +36,13 @@ background: #A0E6FF;
 
 #paste-wrapper #code {
 	padding-top: 30px;
-	/*background: #ccc;*/
 	width: 100%;
 	float: center;
 	overflow: scroll;
 	overflow-y: scroll;
-	
 }
 #paste-wrapper #code .CodeRay .code{
-	word-wrap: break-word;
 	width:100%;
-/*	width: 70em;
-	display:inline-block;*/
-	
 }
 #paste-wrapper .CodeRay {
 		border: solid 2px gray

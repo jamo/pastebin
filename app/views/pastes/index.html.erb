@@ -14,7 +14,7 @@
     <td><%= paste.key %></td>
     <td><%= link_to 'Show', paste_path(paste.key) %></td>
     <td><%= link_to 'Edit', edit_paste_path(paste.key) %></td>
-    <td><%= link_to 'Destroy', paste, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', paste.key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

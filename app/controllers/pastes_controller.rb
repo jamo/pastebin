@@ -108,7 +108,7 @@ class PastesController < ApplicationController
   # DELETE /pastes/1
   # DELETE /pastes/1.json
   def destroy
-    @paste = Paste.find_by_key(params[:id])
+    @paste = Paste.find_by_id(params[:id])
     @paste.destroy
 
     respond_to do |format|

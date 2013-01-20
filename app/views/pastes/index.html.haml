@@ -24,6 +24,4 @@
         %td= paste.size
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), short_edit_paste_path(paste.key), :class => 'btn btn-mini'
-          = link_to t('.destroy', :default => t("helpers.links.destroy")), paste_path(paste.key), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
-
-= link_to t('.new', :default => t("helpers.links.new")), new_paste_path, :class => 'btn btn-primary'
+= link_to "New", new_paste_path,  :class => 'btn btn-primary'

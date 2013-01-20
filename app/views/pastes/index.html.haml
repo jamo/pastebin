@@ -23,5 +23,5 @@
         %td= paste.key
         %td= paste.size
         %td
-          = link_to t('.edit', :default => t("helpers.links.edit")), short_edit_paste_path(paste.key), :class => 'btn btn-mini'
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_paste_path(paste.key), :class => 'btn btn-mini'
 = link_to "New", new_paste_path,  :class => 'btn btn-primary'

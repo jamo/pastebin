@@ -34,18 +34,15 @@ class PastesController < ApplicationController
   # GET /pastes/1
   # GET /pastes/1.json
   def show
-    
    # @paste = Paste.find(params[:id])
     @paste = Paste.find_by_key(params[:id])# unless @paste
-    
     hilight = Paste::LANG[@paste.encoding] || 'java' 
     #rivinumerointi = true
-    
     #@paste.body.each_line do |l|
     #  rivinumerointi = false if l.length > 80
     #end
     #if rivinumerointi
-      @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :table)
+      @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :inline)
     #else
     #  @html = CodeRay.scan(@paste.body, hilight.to_sym).div
     #end
@@ -81,7 +78,7 @@ class PastesController < ApplicationController
 
     respond_to do |format|
       if @paste.save
-        format.html { redirect_to paste_path(@paste.key), notice: 'Paste created! You can give the address 
+        format.html { redirect_to short_paste_path(@paste.key), notice: 'Paste created! You can give the address 
                         of this page to others.' }
       else
         format.html { render action: "new" }

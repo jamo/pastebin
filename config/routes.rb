@@ -10,6 +10,7 @@ Pastebin::Application.routes.draw do
   match "profile", :to => "sessions#profile"
   match "setting", :to => "sessions#setting"
   root :to =>'pastes#new'
+  match ":id", :to => "pastes#show", :as => "short_paste"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

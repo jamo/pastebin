@@ -18,7 +18,6 @@
 }
 .code  pre{
 	overflow: scroll;
-    white-space: pre-line;
 }
 
 .code-container {

@@ -12,13 +12,35 @@
  *= require_tree .
  */
 
-.line-numbers {
-    margin-right: 10px;
+.line-numbers pre{
+    width: 30px;
+    /*white-space: pre-line;*/
 }
-.code {
-	background: #eee;
+.code  pre{
+	overflow: scroll;
+    white-space: pre-line;
+}
+
+.code-container {
+    overflow: scroll;
+    white-space: pre-line;
+}
+table .CodeRay{
+    background-color: red;
+    width:100%;
+}
+pre{
+    width: 100%;
     overflow: auto;
-    white-space: nowrap;
+   /* word-break: break-word;
+    word-wrap: normal;
+    white-space: pre-line;*/
+}
+
+table{
+    max-width: 50px;
+}
+.container-fluid{
 }
 
 /*
@@ -33,7 +55,7 @@
 
 
 }
-*/
+
 .top-bar .attached {
     margin: 0 auto;
     position: relative;

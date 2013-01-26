@@ -24,11 +24,11 @@
     %strong= model_class.human_attribute_name(:size) + ':'
     = @paste.size
     %br
-%p.code
+%div.code-container
   = raw @html
 
 
 .form-actions
   = link_to "New Paste", new_paste_path, :class => "btn btn-primary "
   - if @current_user.admin?
-    = link_to t('.edit', :default => t("helpers.links.edit")), edit_paste_path(@paste), :class => 'btn'
+    = link_to t('.edit', :default => t("helpers.links.edit")), edit_paste_path(@paste.key), :class => 'btn'

@@ -42,7 +42,7 @@ class PastesController < ApplicationController
     #  rivinumerointi = false if l.length > 80
     #end
     #if rivinumerointi
-      @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :inline)
+      @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :table)
     #else
     #  @html = CodeRay.scan(@paste.body, hilight.to_sym).div
     #end

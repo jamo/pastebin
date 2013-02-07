@@ -11,15 +11,14 @@
  *= require_self
  *= require_tree .
  */
+.line-numbers a{
+    margin-right: 10px;
 
-.line-numbers pre{
-    width: 30px;
-    /*white-space: pre-line;*/
 }
 .code  pre{
 	overflow: scroll;
 }
-
+/*
 .code-container {
     overflow: scroll;
     white-space: pre-line;
@@ -34,13 +33,13 @@ pre{
    /* word-break: break-word;
     word-wrap: normal;
     white-space: pre-line;*/
-}
+/*}
 
 table{
     max-width: 50px;
 }
 .container-fluid{
-}
+}*/
 
 /*
 .top {

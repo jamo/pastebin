@@ -42,7 +42,7 @@ class PastesController < ApplicationController
     #  rivinumerointi = false if l.length > 80
     #end
     #if rivinumerointi
-      @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :table)
+      @html = CodeRay.scan(@paste.body, hilight.to_sym).div(:line_numbers => :inline)
     #else
     #  @html = CodeRay.scan(@paste.body, hilight.to_sym).div
     #end
@@ -56,9 +56,6 @@ class PastesController < ApplicationController
   # GET /pastes/new.json
   def new
     @paste = Paste.new
-    
-    
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @paste }

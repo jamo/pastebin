@@ -24,9 +24,13 @@
     %strong= model_class.human_attribute_name(:size) + ':'
     = @paste.size
     %br
-%div.code-container
-  = raw @html
-
+.row
+  .span9
+    = raw @html
+.row
+  .span9
+    =label_tag :raw
+    =text_area_tag :foo,  @paste.body, class: 'input-block-level', rows: 10
 
 .form-actions
   = link_to "New Paste", new_paste_path, :class => "btn btn-primary "

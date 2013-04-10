@@ -25,14 +25,21 @@
     = @paste.size
     %br
 .row
-  .span9
-    = raw @html
-.row
-  .span9
-    =label_tag :raw
-    =text_area_tag :foo,  @paste.body, class: 'input-block-level', rows: 10
-
+  .span8#editor
+    = @html
 .form-actions
   = link_to "New Paste", new_paste_path, :class => "btn btn-primary "
   - if @current_user.admin?
     = link_to t('.edit', :default => t("helpers.links.edit")), edit_paste_path(@paste.key), :class => 'btn'
+
+:javascript
+  $(document).ready(function(){
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/java");
+  });
+:css
+  #editor{
+    width: 100%;
+    height: 400px;
+  }

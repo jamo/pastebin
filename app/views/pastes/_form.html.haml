@@ -1,5 +1,4 @@
 = form_for @paste, :html => { :class => 'form-inline' } do |f|
-
   .row
     .span4
       .control-group
@@ -28,15 +27,17 @@
     = f.submit "Save", :class => 'btn btn-primary'
 
 :javascript
-  var editor = ace.edit("editor");
-  editor.setTheme("ace/theme/monokai");
-  editor.getSession().setMode("ace/mode/java");
+  $(document).ready(function(){
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/java");
 
-  var textarea = $('textarea[name="paste[body]"]').hide();
+    var textarea = $('textarea[name="paste[body]"]').hide();
 
-  editor.getSession().setValue(textarea.val());
-  editor.getSession().on('change', function(){
-    textarea.val(editor.getSession().getValue());
+    editor.getSession().setValue(textarea.val());
+    editor.getSession().on('change', function(){
+      textarea.val(editor.getSession().getValue());
+    });
   });
 
 :css

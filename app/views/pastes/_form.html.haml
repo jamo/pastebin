@@ -16,7 +16,7 @@
       .control-group
         = f.label :encoding, "Syntax", :class => 'control-label'
         .controls
-          = f.select :encoding,Paste::LANG.keys, :class => 'text_field'
+          = f.select :encoding,Paste::LANG, :class => 'text_field', html_options: {:onChange=>"javascript: alert('asdadasd');"}
     .span8
       .control-group
         = f.label :body,"Text to paste", :class => 'control-label'
@@ -38,10 +38,16 @@
     editor.getSession().on('change', function(){
       textarea.val(editor.getSession().getValue());
     });
+
+    $('#paste_encoding').change(function(){
+      var value = $('#paste_encoding option:selected').attr('value');
+      var mode = "ace/mode/"+value;
+      editor.getSession().setMode(mode);
+    });
   });
 
 :css
   #editor{
-    width: 100%;
+    width: auto;
     height: 400px;
   }

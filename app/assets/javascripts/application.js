@@ -15,3 +15,13 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require turbolinks
+function prettifyEditor() {
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/#{@syntax}");
+}
+
+$(document).ready(prettifyEditor);
+$(document).on("page:load", prettifyEditor);
+$(document).on("page:restore", prettifyEditor);
+$(document).on("page:change", prettifyEditor);

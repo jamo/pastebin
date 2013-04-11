@@ -32,12 +32,6 @@
   - if @current_user.admin?
     = link_to t('.edit', :default => t("helpers.links.edit")), edit_paste_path(@paste.key), :class => 'btn'
 
-:javascript
-  $(document).ready(function(){
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/#{@syntax}");
-  });
 :css
   #editor{
     width: 100%;

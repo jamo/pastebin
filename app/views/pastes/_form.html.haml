@@ -16,7 +16,7 @@
       .control-group
         = f.label :encoding, "Syntax", :class => 'control-label'
         .controls
-          = f.select :encoding,Paste::LANG, :class => 'text_field', html_options: {:onChange=>"javascript: alert('asdadasd');"}
+          = f.select :encoding,Paste::LANG, :class => 'text_field'
     .span8
       .control-group
         = f.label :body,"Text to paste", :class => 'control-label'
@@ -29,7 +29,7 @@
 :javascript
   $(document).ready(function(){
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
+    editor.setTheme("ace/theme/github");
     editor.getSession().setMode("ace/mode/java");
 
     var textarea = $('textarea[name="paste[body]"]').hide();
@@ -48,6 +48,7 @@
 
 :css
   #editor{
-    width: auto;
-    height: 400px;
+    width: 100%;
+    height: 500px;
+    position: relative;
   }

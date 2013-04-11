@@ -12,13 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ace/ace
+//= require ace/theme-github.js
+//= require ace/mode-text.js
+//= require ace/mode-c_cpp.js
+//= require ace/mode-java.js
+//= require ace/mode-javascript.js
+//= require ace/mode-ruby.js
+//= require ace/mode-html.js
 //= require twitter/bootstrap
 //= require_tree .
 //= require turbolinks
 function prettifyEditor() {
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/#{@syntax}");
+    editor.setTheme("ace/theme/github");
 }
 
 $(document).ready(prettifyEditor);

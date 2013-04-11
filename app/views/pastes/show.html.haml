@@ -31,6 +31,8 @@
   = link_to "New Paste", new_paste_path, :class => "btn btn-primary "
   - if @current_user.admin?
     = link_to t('.edit', :default => t("helpers.links.edit")), edit_paste_path(@paste.key), :class => 'btn'
+:javascript
+  editor.getSession().setMode("ace/mode/#{@syntax}");
 
 :css
   #editor{

@@ -26,6 +26,9 @@
 function prettifyEditor() {
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/github");
+	if(typeof window.setEncoding == 'function') {
+		setEncoding();
+	}
 }
 
 $(document).ready(prettifyEditor);

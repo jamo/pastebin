@@ -32,7 +32,9 @@
   - if @current_user.admin?
     = link_to t('.edit', :default => t("helpers.links.edit")), edit_paste_path(@paste.key), :class => 'btn'
 :javascript
-  editor.getSession().setMode("ace/mode/#{@syntax}");
+  function setEncoding(){
+    editor.getSession().setMode("ace/mode/#{@syntax}");
+  }
 
 :css
   #editor{

@@ -20,7 +20,7 @@ function prettifyEditor() {
     editor.setTheme("ace/theme/github");
     var syntax = $('#data').attr("syntax");
     if (!syntax) {
-      	firstChapterIndex = 'java';
+      	syntax = 'java';
     }
     editor.getSession().setMode("ace/mode/"+syntax);
 }

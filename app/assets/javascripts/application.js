@@ -12,14 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ace/ace
-//= require ace/theme-github.js
-//= require ace/mode-text.js
-//= require ace/mode-c_cpp.js
-//= require ace/mode-java.js
-//= require ace/mode-javascript.js
-//= require ace/mode-ruby.js
-//= require ace/mode-html.js
 //= require twitter/bootstrap
 //= require_tree .
 //= require turbolinks

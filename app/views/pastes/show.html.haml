@@ -5,7 +5,7 @@
 
 
 - model_class = Paste
-.page-header
+.page-header#data{syntax: @syntax}
   %h1= @paste.title
 .row
   .span2
@@ -25,16 +25,12 @@
     = @paste.size
     %br
 .row
-  .span8#editor
+  .span8.editor#editor
     = @html
 .form-actions
   = link_to "New Paste", new_paste_path, :class => "btn btn-primary "
   - if @current_user.admin?
     = link_to t('.edit', :default => t("helpers.links.edit")), edit_paste_path(@paste.key), :class => 'btn'
-:javascript
-  function setEncoding(){
-    editor.getSession().setMode("ace/mode/#{@syntax}");
-  }
 
 :css
   #editor{

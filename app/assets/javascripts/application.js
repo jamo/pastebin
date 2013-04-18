@@ -18,9 +18,11 @@
 function prettifyEditor() {
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/github");
-	if(typeof window.setEncoding == 'function') {
-		setEncoding();
-	}
+    var syntax = $('#data').attr("syntax");
+    if (!syntax) {
+      	firstChapterIndex = 'java';
+    }
+    editor.getSession().setMode("ace/mode/"+syntax);
 }
 
 $(document).ready(prettifyEditor);

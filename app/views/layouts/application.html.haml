@@ -8,8 +8,6 @@
     %title TMCopyPaste
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    - Dir.glob(File.join(Rails.root, "lib","assets", "js","*.js")) do |js|
-      = javascript_include_tag js.to_s
 
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/

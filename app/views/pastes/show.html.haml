@@ -7,7 +7,7 @@
 - model_class = Paste
 .page-header#data{syntax: @syntax}
   %h1= @paste.title
-.row
+.row-fluid
   .span2
     %strong= model_class.human_attribute_name(:filename) + ':'
     = @paste.filename
@@ -24,8 +24,8 @@
     %strong= model_class.human_attribute_name(:size) + ':'
     = @paste.size
     %br
-.row
-  .span8.editor#editor
+.row-fluid
+  .offset1.span8.editor.well#editor
     = @html
 .form-actions
   = link_to "New Paste", new_paste_path, :class => "btn btn-primary "
@@ -34,6 +34,10 @@
 
 :css
   #editor{
-    width: 100%;
-    height: 400px;
+    /*width: 100%;*/
+  }
+  #editor-wrapper{
+   /* width: 100%;*/
+  /*  margin-left:
+    margin-right: */
   }

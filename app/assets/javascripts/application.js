@@ -15,8 +15,9 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require turbolinks
+var editor = null;
 function prettifyEditor() {
-    var editor = ace.edit("editor");
+    editor = ace.edit("editor");
     editor.setTheme("ace/theme/github");
     var syntax = $('#data').attr("syntax");
     if (!syntax) {
@@ -25,7 +26,24 @@ function prettifyEditor() {
     editor.getSession().setMode("ace/mode/"+syntax);
 }
 
-$(document).ready(prettifyEditor);
-$(document).on("page:load", prettifyEditor);
-$(document).on("page:restore", prettifyEditor);
-$(document).on("page:change", prettifyEditor);
+function setHeight() {
+
+    var newHeight = editor.getSession().getScreenLength() * editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth();
+    console.log("height: " + newHeight);
+    $('#editor').height(newHeight.toString() + "px");
+    editor.resize();
+    /*$("#editor").css("width", $("#editor-wrapper").width());*/
+    editor.resize();
+    /*$("#editor-wrapper").css("height", (newHeight + 40) + "px");*/
+}
+
+function  render(){
+    console.log("render called");
+    prettifyEditor();
+    setHeight();
+}
+
+$(document).ready(render);
+$(document).on("page:load", render);
+$(document).on("page:restore", render);
+$(document).on("page:change", render);

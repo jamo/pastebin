@@ -38,10 +38,6 @@ class PastesController < ApplicationController
     @syntax = Paste::LANG[@paste.encoding] || 'java'
 
     @html = @paste.body
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @paste }
-    end
   end
 
   # GET /pastes/new
@@ -63,11 +59,11 @@ class PastesController < ApplicationController
   # POST /pastes.json
   def create
     @paste = Paste.new(params[:paste])
-    
+
 
     respond_to do |format|
       if @paste.save
-        format.html { redirect_to short_paste_path(@paste.key), notice: 'Paste created! You can give the address 
+        format.html { redirect_to short_paste_path(@paste.key), notice: 'Paste created! You can give the address
                         of this page to others.' }
       else
         format.html { render action: "new" }

@@ -56,6 +56,14 @@ module Pastebin
     # Enable the asset pipeline
     config.assets.enabled = true
 
+
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post]
+      end
+    end
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end

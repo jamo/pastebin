@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :current_user
   before_filter :can_access?
   protect_from_forgery
+
   #protected
   def authenticate_user
     user = User.find_by_id(session[:user_id])
@@ -20,11 +21,11 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     authenticate_user
   end
-  
+
   def can_access?
     return respond_access_denied unless current_user.admin?
   end
- 
+
 
   def current_user
     @current_user = User.find_by_id(session[:user_id]) # Use find_by_id to get nil instead of an error if user doesn't exist
@@ -43,7 +44,7 @@ class ApplicationController < ActionController::Base
        return false
      end
   end
-  
+
   def respond_not_found(msg = 'Not Found')
       respond_with_error(msg, 404)
     end

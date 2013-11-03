@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.15'
+
+gem 'rack-cors', :require => 'rack/cors'
 
 gem 'ace-rails-ap'
 
@@ -11,12 +13,11 @@ gem 'haml-rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :production do
   gem 'sqlite3'
-  #gem 'pg'
+
 end
 
 group :development do
   gem 'sqlite3'
-  gem 'debugger'
 end
 
 

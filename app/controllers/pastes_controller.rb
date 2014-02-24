@@ -35,6 +35,9 @@ class PastesController < ApplicationController
   def show
    # @paste = Paste.find(params[:id])
     @paste = Paste.find_by_key(params[:id])# unless @paste
+    if @paste.created_at < 2.hours.ago and not current_user.admin?
+      respond_access_denied("Paste has expired!")
+    end
     @syntax = Paste::LANG[@paste.encoding] || 'java'
 
     @html = @paste.body

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15'
+gem 'rails', '~> 3.2.15'
 
 gem 'rack-cors', :require => 'rack/cors'
 
@@ -11,19 +11,9 @@ gem 'haml-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :production do
-  gem 'sqlite3'
-
-end
-
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3'
 
 
-group :test do
-  gem 'sqlite3'
-end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

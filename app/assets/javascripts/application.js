@@ -57,7 +57,7 @@ function update_text_area() {
 
 function render(){
     prettifyEditor();
-  //  update_text_area();
+    update_text_area();
     setHeight();
     editor.getSession().on('change', function(){
       setHeight();

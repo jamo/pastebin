@@ -19,38 +19,44 @@ var editor = null;
 function prettifyEditor() {
     editor = ace.edit("editor");
     editor.setTheme("ace/theme/github");
-    var syntax = $('#data').attr("syntax");
+    var syntax = $('#paste_encoding').attr("syntax");
     if (!syntax) {
-syntax = 'java';
+      syntax = 'java';
     }
     editor.getSession().setMode("ace/mode/"+syntax);
+
+    $('#paste_encoding').change(function(){
+      var value = $('#paste_encoding option:selected').attr('value');
+      var mode = "ace/mode/"+value;
+      editor.getSession().setMode(mode);
+      console.log("updating mode");
+    });
 }
 
 function setHeight() {
-
     var newHeight = editor.getSession().getScreenLength() * editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth();
     var minHeight = 160;
-    var maxHeight = $(window).height() - 300;
+    var maxHeight = $(window).height() - 280;
 
-
-    if (newHeight < minHeight){
-      newHeight = minHeight;
-    } else if (newHeight > maxHeight){
+    if (newHeight < maxHeight){
       newHeight = maxHeight;
     }
-    if (newHeight < minHeight || newHeight > 9000 ){
-      newHeight = minHeight;
-    }
-
     $('#editor').height(newHeight.toString() + "px");
     editor.resize();
 }
 
-function  render(){
-    console.log("render called");
-    prettifyEditor();
-    setHeight();
+function update_text_area() {
+  var textarea = $('textarea[name="paste[body]"]').hide();
+  editor.getSession().setValue(textarea.val());
+  editor.getSession().on('change', function(){
+    textarea.val(editor.getSession().getValue());
+  });
+}
 
+function render(){
+    prettifyEditor();
+    update_text_area();
+    setHeight();
     editor.getSession().on('change', function(){
       setHeight();
     });
@@ -61,4 +67,3 @@ $(document).on("page:load", render);
 $(document).on("page:restore", render);
 $(document).on("page:change", render);
 $(window).resize(setHeight);
-

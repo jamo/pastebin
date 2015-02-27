@@ -36,7 +36,7 @@ function prettifyEditor() {
 function setHeight() {
     var newHeight = editor.getSession().getScreenLength() * editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth();
     var minHeight = 160;
-    var maxHeight = $(window).height() - 280;
+    var maxHeight = $(window).height() - 300;
 
     if (newHeight < maxHeight){
       newHeight = maxHeight;
@@ -47,15 +47,17 @@ function setHeight() {
 
 function update_text_area() {
   var textarea = $('textarea[name="paste[body]"]').hide();
-  editor.getSession().setValue(textarea.val());
-  editor.getSession().on('change', function(){
-    textarea.val(editor.getSession().getValue());
-  });
+  if (textarea) {
+    editor.getSession().setValue(textarea.val());
+    editor.getSession().on('change', function(){
+      textarea.val(editor.getSession().getValue());
+    });
+  }
 }
 
 function render(){
     prettifyEditor();
-    update_text_area();
+  //  update_text_area();
     setHeight();
     editor.getSession().on('change', function(){
       setHeight();

@@ -47,9 +47,8 @@ function setHeight() {
 
 function update_text_area() {
   var textarea = $('textarea[name="paste[body]"]');
-  if (!textarea) {
+  if (!!textarea) {
     textarea.hide();
-    editor.getSession().setValue(textarea.val());
     editor.getSession().on('change', function(){
       textarea.val(editor.getSession().getValue());
     });

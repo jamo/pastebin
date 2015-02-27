@@ -39,8 +39,6 @@ class PastesController < ApplicationController
       respond_access_denied("Paste has expired!")
     end
     @syntax = Paste::LANG[@paste.encoding] || 'java'
-
-    @html = @paste.body
   end
 
   # GET /pastes/new

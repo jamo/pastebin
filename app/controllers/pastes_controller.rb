@@ -21,7 +21,10 @@ class PastesController < ApplicationController
       :yml         =>:text
 =end
   def index
-    @pastes = Paste.all
+    offset = 1000
+    page = params[:page].to_i
+    @pastes = Paste.limit(offset).offset(page * offset).order(id: :asc)
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -35,7 +38,7 @@ class PastesController < ApplicationController
   def show
    # @paste = Paste.find(params[:id])
     @paste = Paste.find_by_key(params[:id])# unless @paste
-    if @paste.created_at < 2.hours.ago and not current_user.admin?
+    if @paste.created_at < 2.days.ago and not current_user.admin?
       respond_access_denied("Paste has expired!")
     end
     @syntax = Paste::LANG[@paste.encoding] || 'java'

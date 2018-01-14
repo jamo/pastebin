@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_filter :authenticate_user, :only => [:home, :profile, :setting]
-  skip_before_filter :can_access? 
+  skip_before_filter :can_access?
 
   def login
     #Login Form
@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       flash[:notice] = "Welcome again, you logged in as #{authorized_user.username}"
-      redirect_to pastes_path
+      redirect_to root_path
     else
-      flash[:error] = "Invalid Username or Password" unless flash[:error] 
+      flash[:error] = "Invalid Username or Password" unless flash[:error]
       render "login"
     end
   end
